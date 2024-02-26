@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/self-intro-app/static/css/main.ff02f4b5.css",
+    "main.js": "/self-intro-app/static/js/main.97171eec.js",
+    "static/js/453.059ab568.chunk.js": "/self-intro-app/static/js/453.059ab568.chunk.js",
+    "index.html": "/self-intro-app/index.html",
+    "main.ff02f4b5.css.map": "/self-intro-app/static/css/main.ff02f4b5.css.map",
+    "main.97171eec.js.map": "/self-intro-app/static/js/main.97171eec.js.map",
+    "453.059ab568.chunk.js.map": "/self-intro-app/static/js/453.059ab568.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff02f4b5.css",
+    "static/js/main.97171eec.js"
+  ]
+}
