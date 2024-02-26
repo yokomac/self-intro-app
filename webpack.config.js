@@ -1,3 +1,4 @@
+// webpack.config.js
 const path = require('path');
 
 module.exports = {
@@ -15,11 +16,16 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: [
+              ['@babel/preset-env', { targets: { node: 'current' } }], // Node.js向けにトランスパイル
+              '@babel/preset-react',
+            ],
           },
         },
       },
     ],
   },
-  externals: ['express'], // express を外部モジュールとして扱う
+  externals: {
+    express: 'commonjs express', // expressを外部モジュールとして扱う
+  },
 };
