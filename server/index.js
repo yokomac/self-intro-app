@@ -1,9 +1,28 @@
-const express = require('express');
+import express from 'express';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import App from '../src/App';
+// import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+
 const app = express();
 const port = 9000;
 
 app.get('/', (req, res) => {
-  res.send('Hello world');
+  const appHtml = renderToString(<App />); //指定内容
+
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>SSR React App</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      </head>
+      <body>
+        <div id="root">${appHtml}</div>
+        <script src="/dist/bundle.js"></script>
+      </body>
+    </html>
+  `);
 });
 
 app.listen(port, () => {

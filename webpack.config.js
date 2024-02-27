@@ -1,5 +1,5 @@
-// webpack.config.js
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   target: 'node',
@@ -11,21 +11,24 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', { targets: { node: 'current' } }], // Node.js向けにトランスパイル
+              ['@babel/preset-env', { targets: { node: 'current' } }],
               '@babel/preset-react',
+              '@babel/preset-typescript',
             ],
           },
         },
       },
+      {
+        test: /\.css$/,
+        use: ['css-loader'],
+      },
     ],
   },
-  externals: {
-    express: 'commonjs express', // expressを外部モジュールとして扱う
-  },
+  externals: [nodeExternals()],
 };
