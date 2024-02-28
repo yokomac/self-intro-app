@@ -9,6 +9,14 @@ function App() {
     hobbies: ['Reading', 'Coding', 'Traveling'],
   };
 
+  const openWebsite = () => {
+    // 別のWEBサイトのURLを指定
+    const externalWebsiteURL = 'https://buttoned-kettle-f73.notion.site/My-portfolio-site-358cd5f2b7e843fe83961e95d2f4c2a7';
+
+    // 別のWEBサイトを新しいウィンドウまたはタブで開く
+    window.open(externalWebsiteURL, '_blank');
+  };
+
   return (
     <Container className="mt-5">
       <Row>
@@ -16,7 +24,7 @@ function App() {
           <Card>
             <Card.Body>
               <Introduction {...myInfo} />
-              <Button variant="primary">Learn More</Button>
+              <Button variant="primary" onClick={openWebsite}>Learn More</Button>
             </Card.Body>
           </Card>
         </Col>
