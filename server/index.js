@@ -19,7 +19,6 @@ app.get('/', (req, res) => {
       </head>
       <body>
         <div id="root">${appHtml}</div>
-        <script src="/dist/bundle.js"></script>
       </body>
     </html>
   `);
