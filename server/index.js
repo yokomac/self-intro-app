@@ -1,7 +1,7 @@
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import App from '../src/App';
+import App from '../src/App.tsx';
 // import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
 const app = express();
