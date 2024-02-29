@@ -1,20 +1,13 @@
 import React from 'react';
 import Introduction from './Introduction.tsx';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+// import Link from 
 
 function App() {
   const myInfo = {
     name: ' Takuto Yokomaku',
     age: 25,
     hobbies: ['Reading', 'Coding', 'Traveling'],
-  };
-
-  const openWebsite = () => {
-    // 別のWEBサイトのURLを指定
-    const externalWebsiteURL = 'https://buttoned-kettle-f73.notion.site/My-portfolio-site-358cd5f2b7e843fe83961e95d2f4c2a7';
-
-    // 別のWEBサイトを新しいウィンドウまたはタブで開く
-    window.open(externalWebsiteURL, '_blank');
   };
 
   return (
@@ -24,7 +17,7 @@ function App() {
           <Card>
             <Card.Body>
               <Introduction {...myInfo} />
-              <Button variant="primary" onClick={openWebsite}>Learn More</Button>
+              <a href='https://buttoned-kettle-f73.notion.site/My-portfolio-site-358cd5f2b7e843fe83961e95d2f4c2a7'>Learn More</a>
             </Card.Body>
           </Card>
         </Col>
